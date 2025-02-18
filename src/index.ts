@@ -119,11 +119,25 @@ async function main() {
               first?: number;
               after?: string;
               includeArchived?: boolean;
+              filter?: {
+                name?: { contains?: string };
+                state?: { eq?: string };
+                health?: { eq?: string };
+                lead?: { id?: { eq?: string } };
+                startDate?: { gte?: string; lte?: string };
+                targetDate?: { gte?: string; lte?: string };
+                status?: {
+                  name?: { eq?: string };
+                  type?: { eq?: string };
+                  id?: { eq?: string };
+                };
+              };
             };
             const response = await linearClient.projects({
               first: args.first,
               after: args.after,
               includeArchived: args.includeArchived,
+              filter: args.filter,
             });
             return {
               content: [{ type: "text", text: JSON.stringify(response) }],

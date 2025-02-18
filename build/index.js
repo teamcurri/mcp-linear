@@ -83,6 +83,7 @@ async function main() {
                         first: args.first,
                         after: args.after,
                         includeArchived: args.includeArchived,
+                        filter: args.filter,
                     });
                     return {
                         content: [{ type: "text", text: JSON.stringify(response) }],

@@ -105,6 +105,10 @@ export const Tools = {
                     description: "Include archived projects in results",
                     default: false,
                 },
+                filter: {
+                    type: "object",
+                    description: "Filter projects",
+                },
             },
         },
     },

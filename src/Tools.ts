@@ -107,6 +107,10 @@ export const Tools: Record<string, Tool> = {
           description: "Include archived projects in results",
           default: false,
         },
+        filter: {
+          type: "object",
+          description: "Filter projects",
+        },
       },
     },
   },
